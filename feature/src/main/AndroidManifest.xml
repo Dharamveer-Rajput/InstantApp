@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mytaxiride.instantapp.feature">
+
+    <uses-permission android:name="android.permission.INTERNET">
+
+    </uses-permission>
+
+    <application>
+        <meta-data
+            android:name="asset_statements"
+            android:resource="@string/asset_statements" />
+        <activity android:name=".MainActivity">
+            <intent-filter android:order="1" android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+
+                <data android:scheme="http" />
+
+
+                <data android:scheme="https" />
+                <data android:host="mytaxiride.com" />
+                <data android:pathPattern="/insta" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <meta-data
+                android:name="default-url"
+                android:value="https://mytaxiride.com/insta" />
+        </activity>
+    </application>
+
+</manifest>
